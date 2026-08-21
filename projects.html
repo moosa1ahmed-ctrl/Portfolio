@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects · Moosa Ahmed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap navwrap">
+    <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Profile</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Ed &amp; Courses</a>
+      <a href="experience.html">Experience</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="resume.html">Resume</a>
+      <div class="navsocial">
+        <a href="https://www.linkedin.com/in/moosa-ahmed-/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/moosa1ahmed-ctrl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head wrap reveal">
+  <div class="eyebrow">Projects</div>
+  <h1>Everything I've built</h1>
+  <p class="sec-sub">Course projects, a UX case study, and an active personal build. Click any project to see why it was made, what was used to build it, and the link.</p>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="accordion reveal">
+
+      <div class="acc-item" id="proj-parksense">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">ParkSense AI <span class="status-pill progress" style="margin-left:8px;">In Progress</span></span>
+            <span class="ptag">Personal project · Solo build</span>
+            <a class="see-project-pill disabled" href="#" onclick="return false;">Private repo, in development</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>A solo, ongoing personal project: a B2B SaaS parking management platform aimed at real pain points, including operators losing revenue to inefficient spot usage and theft, drivers losing time finding a spot, and most "smart" parking systems failing exactly where they're needed most, in underground structures with poor connectivity. It started as much as a way to learn backend development from first principles as a genuine product concept.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>FastAPI, PostgreSQL, Docker, Python</li>
+              <li>In-memory CRUD endpoints, ahead of full database integration</li>
+              <li>Planned: a reinforcement-learning spot-assignment engine extending the Q-learning work below</li>
+              <li>Planned: a computer-vision ANPR pipeline, built offline-first for poor-connectivity environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="proj-smart-parking">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">Smart Parking: Optimization vs. Reinforcement Learning</span>
+            <span class="ptag">CP468 Artificial Intelligence · Team of 4</span>
+            <a class="see-project-pill" href="https://github.com/moosa1ahmed-ctrl/smart-parking-optimization-r1" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>Built for CP468 Artificial Intelligence as part of a 4-person team. Modeled the urban parking assignment problem as both a graph search task and a Markov Decision Process, to directly compare deterministic optimization against adaptive reinforcement learning on the exact same problem.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>Python</li>
+              <li>Dijkstra's algorithm with hill climbing</li>
+              <li>From-scratch Q-learning agent</li>
+              <li>Simulations across 3 constraint scenarios (availability, walking-distance limits)</li>
+              <li>Evaluation on total cost, adaptability, and convergence</li>
+              <li>Co-authored an 8-page IEEE-format research paper with the team and presented findings to the class</li>
+            </ul>
+            <a class="acc-source-link" href="https://github.com/moosa1ahmed-ctrl/smart-parking-optimization-r1" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> View repository</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="proj-car-rental">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">Car Rental System</span>
+            <span class="ptag">CP317 Software Engineering · Team of 7</span>
+            <a class="see-project-pill" href="https://github.com/moosa1ahmed-ctrl/car-rental-system" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>Built for CP317 Software Engineering as part of a 7-person team. A full-stack desktop application enabling customers to browse vehicles, make reservations, and manage bookings through a dynamic interface, backed by a secure admin dashboard, practicing a full Agile lifecycle across the team.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>C#, WPF</li>
+              <li>PostgreSQL, Entity Framework</li>
+              <li>Vehicle availability tracking</li>
+              <li>Pricing calculation logic</li>
+              <li>Role-based access control</li>
+            </ul>
+            <a class="acc-source-link" href="https://github.com/moosa1ahmed-ctrl/car-rental-system" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> View repository</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="proj-equipment-test-center">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">Equipment Test Center, DBMS</span>
+            <span class="ptag">CP363 Database Systems · Team of 2</span>
+            <a class="see-project-pill" href="https://github.com/moosa1ahmed-ctrl/equipment-test-center-dbms" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>Built for CP363 Database Systems with a partner. Designed to go through the complete database lifecycle rather than writing isolated queries: ER/EER modeling of an equipment testing center, through relational schema design, to formally proving the result is normalized, to a real application built on top.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>MySQL, Python, Tkinter</li>
+              <li>11-table schema with enforced PK/FK and CHECK constraints</li>
+              <li>Subqueries, correlated subqueries, and window functions</li>
+              <li>Views with nested subqueries</li>
+              <li>Formal normalization to 3NF and BCNF</li>
+              <li>Python CLI menu and Tkinter GUI application on top</li>
+            </ul>
+            <a class="acc-source-link" href="https://github.com/moosa1ahmed-ctrl/equipment-test-center-dbms" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-brands fa-github"></i> View repository</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="proj-digits-of-e">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">Digits of e, Digital Logic Circuit</span>
+            <span class="ptag">CP 220 · Digital Electronics</span>
+            <a class="see-project-pill" href="assets/cp220-digits-of-e-project.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>Built for CP 220 Digital Electronics as an individual project. The core concept: a 4-bit combinational logic circuit that takes a binary input representing a decimal place and outputs the corresponding digit of the mathematical constant e, going all the way from a truth table to minimized, working hardware logic.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>Truth tables</li>
+              <li>Karnaugh maps</li>
+              <li>Minimized Boolean (SOP) expressions</li>
+              <li>Simulated and validated circuit behavior across all 16 input combinations, including proper handling of invalid states</li>
+            </ul>
+            <a class="acc-source-link" href="assets/cp220-digits-of-e-project.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-solid fa-file-pdf"></i> View project PDF</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item" id="proj-navigo">
+        <div class="acc-head">
+          <div style="flex:1;">
+            <span class="pname">NaviGo, Travel &amp; Logistics Platform UX Strategy</span>
+            <span class="ptag">UX103 · UX Strategy</span>
+            <a class="see-project-pill" href="https://www.figma.com/proto/Aq3YMSAm44AS9F0Ndw0NAg/UX-103-Assignment-4?node-id=1-2&amp;starting-point-node-id=1%3A2&amp;t=MIHs8RQrkSUUFZQD-1" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
+          </div>
+          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <h4>Description</h4>
+            <p>Built for UX103 UX Strategy. Designed the UX strategy for an all-in-one travel platform concept combining ride-hailing, car rentals, public transit, and food/courier delivery, defining the target audience, information architecture, and a full site map.</p>
+            <h4>Tools &amp; concepts used</h4>
+            <ul>
+              <li>Figma</li>
+              <li>12-page site map</li>
+              <li>Competitor research on Uber and Lyft across pricing, UX, and market positioning</li>
+              <li>Deliverables plan spanning wireframes, mockups, and an interactive prototype</li>
+            </ul>
+            <a class="acc-source-link" href="https://www.figma.com/proto/Aq3YMSAm44AS9F0Ndw0NAg/UX-103-Assignment-4?node-id=1-2&amp;starting-point-node-id=1%3A2&amp;t=MIHs8RQrkSUUFZQD-1" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-brands fa-figma"></i> View Figma prototype</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Looking for entry-level software and AI roles.</h2>
+    <div class="contact-rail reveal">
+      <span class="contact-rail-item"><i class="fa-solid fa-phone"></i> (437) 663-0242</span>
+      <span class="contact-rail-item"><i class="fa-solid fa-envelope"></i> moosa1ahmed@gmail.com</span>
+      <span class="contact-rail-item"><i class="fa-solid fa-location-dot"></i> Waterloo, ON</span>
+    </div>
+    <div class="contact-row reveal">
+      <a class="btn solid" href="https://www.linkedin.com/in/moosa-ahmed-/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i>&nbsp; LinkedIn</a>
+      <a class="btn" href="https://github.com/moosa1ahmed-ctrl" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>&nbsp; GitHub</a>
+    </div>
+    <div class="fine">Waterloo, ON · built by Moosa Ahmed</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

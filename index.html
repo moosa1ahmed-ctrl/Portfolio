@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moosa Ahmed · Computer Science Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap navwrap">
+    <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html">Profile</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Ed &amp; Courses</a>
+      <a href="experience.html">Experience</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="resume.html">Resume</a>
+      <div class="navsocial">
+        <a href="https://www.linkedin.com/in/moosa-ahmed-/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://github.com/moosa1ahmed-ctrl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="photo-banner reveal">
+    <div class="avatar-circle">MA</div>
+  </div>
+</header>
+
+<section class="wrap hero-content">
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Computer Science · Software Engineering &amp; AI</div>
+      <h1 class="hero-name">Moosa Ahmed | BSc CS @ WLU</h1>
+      <p class="lede">Hey, welcome! I'm Moosa, a Computer Science student who loves turning ideas into working systems and figuring out how things run under the hood. Take a look around, I'd love for you to see what I've been building and where I'm hoping to land next.</p>
+      <div class="hero-meta">Waterloo, ON<span class="sep">·</span>Final year, expected Dec 2026<span class="sep">·</span>Open to internships</div>
+      <div class="cta-row">
+        <a href="resume.html" class="btn solid">View Résumé</a>
+        <a href="projects.html" class="btn">See Projects</a>
+      </div>
+    </div>
+    <div class="schematic-wrap reveal">
+      <div class="schematic-card" id="schematicCard">
+        <div class="schematic-head">
+          <div class="eyebrow" style="margin:0;">Interactive · Dijkstra's algorithm</div>
+        </div>
+        <svg viewBox="0 0 340 300" width="100%" id="schematicSvg">
+          <line class="edge" id="e-A-S" x1="60" y1="40" x2="160" y2="90"/>
+          <line class="edge" id="e-S-B" x1="160" y1="90" x2="270" y2="60"/>
+          <line class="edge" id="e-S-C" x1="160" y1="90" x2="120" y2="190"/>
+          <line class="edge" id="e-S-D" x1="160" y1="90" x2="250" y2="200"/>
+          <line class="edge" id="e-C-E" x1="120" y1="190" x2="60" y2="250"/>
+          <line class="edge" id="e-C-D" x1="120" y1="190" x2="250" y2="200"/>
+          <line class="edge" id="e-D-G" x1="250" y1="200" x2="280" y2="270"/>
+
+          <text class="edge-weight-label" id="lbl-e-A-S" x="100" y="58"></text>
+          <text class="edge-weight-label" id="lbl-e-S-B" x="220" y="68"></text>
+          <text class="edge-weight-label" id="lbl-e-S-C" x="128" y="145"></text>
+          <text class="edge-weight-label" id="lbl-e-S-D" x="210" y="140"></text>
+          <text class="edge-weight-label" id="lbl-e-C-E" x="78" y="225"></text>
+          <text class="edge-weight-label" id="lbl-e-C-D" x="180" y="188"></text>
+          <text class="edge-weight-label" id="lbl-e-D-G" x="272" y="240"></text>
+
+          <g id="n-A"><circle class="node" cx="60" cy="40" r="14"/><text class="node-label" x="60" y="24" text-anchor="middle">A</text></g>
+          <g id="n-B"><circle class="node" cx="270" cy="60" r="14"/><text class="node-label" x="270" y="44" text-anchor="middle">B</text></g>
+          <g id="n-S"><circle class="node" cx="160" cy="90" r="15"/><text class="node-label" x="160" y="74" text-anchor="middle">S</text></g>
+          <g id="n-C"><circle class="node" cx="120" cy="190" r="14"/><text class="node-label" x="120" y="212" text-anchor="middle">C</text></g>
+          <g id="n-D"><circle class="node" cx="250" cy="200" r="14"/><text class="node-label" x="250" y="222" text-anchor="middle">D</text></g>
+          <g id="n-E"><circle class="node" cx="60" cy="250" r="14"/><text class="node-label" x="60" y="272" text-anchor="middle">E</text></g>
+          <g id="n-G"><circle class="node" cx="280" cy="270" r="15"/><text class="node-label" x="280" y="292" text-anchor="middle">G</text></g>
+        </svg>
+        <p id="statusLabel" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-faint); margin:8px 0 0;">click a start node</p>
+        <p class="dij-instructions">Click a node to set start, another to set end, and it runs real Dijkstra on the current weights. Click any edge to change its weight.</p>
+        <div class="dij-legend">
+          <span><span class="legend-dot start"></span>start</span>
+          <span><span class="legend-dot end"></span>end</span>
+          <span><span class="legend-dot path"></span>shortest path</span>
+        </div>
+        <div class="schematic-foot">
+          <button class="btn small" id="runBtn">Reset ↻</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">About</div>
+      <h2>About Me</h2>
+    </div>
+    <div class="card about-card reveal">
+      <div class="about-intro">
+        <p>I'm a final-year student at Wilfrid Laurier University, majoring in Computer Science with a concentration in Artificial Intelligence and Software Engineering. Right now I'm building ParkSense AI, a B2B SaaS platform that helps parking operators cut down on lost revenue and helps drivers find a spot faster. My coursework has spanned everything from digital electronics and database systems to machine learning and UX strategy, and as I head into my final terms I'm looking forward to specializing further in AI and data-driven systems while gaining hands-on industry experience.</p>
+      </div>
+      <div class="ld-grid">
+        <div class="ld-box">
+          <div class="ld-title"><span class="dot good"></span>Strengths</div>
+          <ul>
+            <li>Always ready to learn and excited to adapt to new technologies</li>
+            <li>Always give my input on a problem, helps me improve and learn</li>
+            <li>Take feedback seriously and use it to improve, rather than getting defensive</li>
+          </ul>
+        </div>
+        <div class="ld-box">
+          <div class="ld-title"><span class="dot bad"></span>Weaknesses</div>
+          <ul>
+            <li>Never worked in a professional, cross-functional dev team, most of my work is academic team projects</li>
+            <li>Can be overly critical of my own work</li>
+            <li>Experienced only with a limited range of tools &amp; tech yet</li>
+          </ul>
+        </div>
+      </div>
+      <div class="interests-box">
+        <div class="ld-title">Interests</div>
+        <p style="margin:0;">Robotics, Artificial Intelligence, Machine Learning,The Automotive Industry, Embedded Systems, Cloud Computing, and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Projects</div>
+      <h2>What I've built</h2>
+    </div>
+    <div class="card reveal">
+      <div class="preview-list">
+        <a class="preview-row" href="projects.html#proj-smart-parking">
+          <div class="prow-top">
+            <span class="pname">Smart Parking: Optimization vs. RL</span>
+            <span class="ptag">CP468 · Artificial Intelligence</span>
+          </div>
+          <span class="ptools">Python, Q-Learning, Dijkstra's Algorithm</span>
+        </a>
+        <a class="preview-row" href="projects.html#proj-car-rental">
+          <div class="prow-top">
+            <span class="pname">Car Rental System</span>
+            <span class="ptag">CP317 · Software Engineering</span>
+          </div>
+          <span class="ptools">C#, WPF, Entity Framework</span>
+        </a>
+        <a class="preview-row" href="projects.html#proj-equipment-test-center">
+          <div class="prow-top">
+            <span class="pname">Equipment Test Center, DBMS</span>
+            <span class="ptag">CP363 · Database Systems</span>
+          </div>
+          <span class="ptools">MySQL, Python, Tkinter</span>
+        </a>
+        <a class="preview-row dim">
+          <div class="prow-top">
+            <span class="pname">NaviGo, Travel &amp; Logistics UX</span>
+            <span class="ptag">UX103 · UX Strategy</span>
+          </div>
+          <span class="ptools">Figma, UX Research</span>
+        </a>
+      </div>
+      <a href="projects.html" class="btn solid" style="width:100%; justify-content:center;">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Technical Skills</div>
+      <h2>Languages, tools &amp; concepts</h2>
+    </div>
+    <div class="skills-3col reveal">
+      <div class="skill-col">
+        <h4>Languages</h4>
+        <p style="font-size:0.85rem; margin-bottom:14px;">Python, Java, C, C#, JavaScript, SQL, HTML/CSS, MATLAB, R, ARM</p>
+        <a href="skills.html" class="btn small">View all →</a>
+      </div>
+      <div class="skill-col">
+        <h4>Tools &amp; Platforms</h4>
+        <p style="font-size:0.85rem; margin-bottom:14px;">Git, VS Code, Eclipse, Jupyter, MySQL, PostgreSQL, Linux, Figma</p>
+        <a href="skills.html" class="btn small">View all →</a>
+      </div>
+      <div class="skill-col">
+        <h4>Concepts</h4>
+        <p style="font-size:0.85rem; margin-bottom:14px;">OOP, Data Structures &amp; Algorithms, Reinforcement Learning, DB Design, Agile/Scrum</p>
+        <a href="skills.html" class="btn small">View all →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Education</div>
+      <h2>WLU · WLIC · The City School</h2>
+    </div>
+    <div class="card reveal preview-card-row">
+      <div>
+        <h3 style="margin-bottom:4px;">Honours BSc Computer Science, Software Engineering &amp; AI</h3>
+        <p style="margin:0;">Wilfrid Laurier University · Final year · Expected December 2026</p>
+        <span class="cgpa-line cgpa-mobile">CGPA: 11.00/12.00</span>
+      </div>
+      <div class="edu-cta">
+        <span class="cgpa-line cgpa-desktop">CGPA: 11.00/12.00</span>
+        <a href="education.html" class="btn">Courses &amp; transcripts →</a>
+      </div>
+      <div class="relevant-courses reveal">
+      <h3 class="rc-heading">Relevant Courses</h3>
+      <div class="rc-grid">
+        <div class="rc-card"><span class="rc-code">CP400V</span><span class="rc-name">Cloud Computing</span></div>
+        <div class="rc-card"><span class="rc-code">CP468</span><span class="rc-name">Artificial Intelligence</span></div>
+        <div class="rc-card"><span class="rc-code">CP322</span><span class="rc-name">Machine Learning</span></div>
+        <div class="rc-card"><span class="rc-code">CP421</span><span class="rc-name">Data Mining</span></div>
+        <div class="rc-card"><span class="rc-code">CP363</span><span class="rc-name">Database I</span></div>
+        <div class="rc-card"><span class="rc-code">CP317</span><span class="rc-name">Software Engineering</span></div>
+        <div class="rc-card"><span class="rc-code">CP386</span><span class="rc-name">Operating Systems</span></div>
+        <div class="rc-card"><span class="rc-code">CP312</span><span class="rc-name">Algorithm Design and Analysis I</span></div>
+        <div class="rc-card"><span class="rc-code">CP264</span><span class="rc-name">Data Structures II</span></div>
+        <div class="rc-card"><span class="rc-code">CP213</span><span class="rc-name">Intro to Object-Oriented Programming</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Experience</div>
+      <h2>Work &amp; roles</h2>
+    </div>
+    <div class="card reveal preview-card-row">
+      <div>
+        <h3 style="margin-bottom:4px;">Backup Supervisor &amp; Storefront Associate, Tim Hortons</h3>
+        <p style="margin:0;">Nov 2024 – Present · Previously Peer Educator at Wilfrid Laurier University</p>
+      </div>
+      <a href="experience.html" class="btn">Full history →</a>
+    </div>
+  </div>
+</section>
+
+<section id="certifications-preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Certifications</div>
+      <h2>Credentials</h2>
+    </div>
+    <div class="card reveal preview-card-row">
+      <div>
+        <h3 style="margin-bottom:4px;">Cybersecurity Job Simulation, Forage / Mastercard</h3>
+        <p style="margin:0;">Apr 2026</p>
+      </div>
+      <a href="certifications.html" class="btn">View certificates →</a>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Academic Standing</div>
+      <h2>Where things stand</h2>
+    </div>
+    <div class="card achieve-card reveal">
+      <div class="achieve-stat">
+        <div class="num">Year 4</div>
+        <div class="label">Final year, Computer Science</div>
+      </div>
+      <div class="achieve-stat">
+        <div class="num">98%</div>
+        <div class="label">Degree requirements complete</div>
+      </div>
+      <div class="achieve-stat">
+        <div class="num">Dec 2026</div>
+        <div class="label">Expected graduation</div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal" style="margin-top:36px;">
+      <div class="eyebrow">Rewards &amp; Achievements</div>
+      <h2>Recognition along the way</h2>
+    </div>
+    <div class="rewards-list reveal">
+      <div class="reward-row">
+        <div class="reward-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div>
+          <div class="reward-title">Dean's Honour Roll, Wilfrid Laurier University</div>
+          <div class="reward-desc">2024/25, Faculty of Science</div>
+        </div>
+      </div>
+      <div class="reward-row">
+        <div class="reward-icon"><i class="fa-solid fa-star"></i></div>
+        <div>
+          <div class="reward-title">Academic Distinction, Wilfrid Laurier International College</div>
+          <div class="reward-desc">Awarded for the highest semester GPA in the program</div>
+        </div>
+      </div>
+      <div class="reward-row">
+        <div class="reward-icon"><i class="fa-solid fa-award"></i></div>
+        <div>
+          <div class="reward-title">High Achiever, The City School</div>
+          <div class="reward-desc">Recognized for scoring 4A*s and 3As in CAIE O-Levels</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Looking for entry-level software and AI roles.</h2>
+    <div class="contact-rail reveal">
+      <span class="contact-rail-item"><i class="fa-solid fa-phone"></i> (437) 663-0242</span>
+      <span class="contact-rail-item"><i class="fa-solid fa-envelope"></i> moosa1ahmed@gmail.com</span>
+      <span class="contact-rail-item"><i class="fa-solid fa-location-dot"></i> Waterloo, ON</span>
+    </div>
+    <div class="contact-row reveal">
+      <a class="btn solid" href="https://www.linkedin.com/in/moosa-ahmed-/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i>&nbsp; LinkedIn</a>
+      <a class="btn" href="https://github.com/moosa1ahmed-ctrl" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>&nbsp; GitHub</a>
+    </div>
+    <div class="fine">Waterloo, ON · built by Moosa Ahmed</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
