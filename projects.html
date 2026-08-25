@@ -54,7 +54,9 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>A solo, ongoing personal project: a B2B SaaS parking management platform aimed at real pain points, including operators losing revenue to inefficient spot usage and theft, drivers losing time finding a spot, and most "smart" parking systems failing exactly where they're needed most, in underground structures with poor connectivity. It started as much as a way to learn backend development from first principles as a genuine product concept.</p>
+            <p>A B2B SaaS parking management platform aimed at two real problems at once: operators losing revenue to inefficient spot usage and theft, and drivers losing time hunting for a spot, especially in underground structures where most "smart" parking systems fail because of poor connectivity. The system is being built backend-first: a FastAPI service currently exposing in-memory CRUD endpoints for spots, sessions, and operators, ahead of full PostgreSQL integration. The core logic still to come is a reinforcement-learning spot-assignment engine (extending the Q-learning work from the Smart Parking project below) and a computer-vision ANPR pipeline for automatic plate recognition, both designed offline-first so the system keeps working when connectivity drops.</p>
+            <h4>Why</h4>
+            <p>Solo, ongoing personal project, started as much as a way to learn backend development from first principles as a genuine product concept worth pursuing further.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>FastAPI, PostgreSQL, Docker, Python</li>
@@ -78,7 +80,9 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>Built for CP468 Artificial Intelligence as part of a 4-person team. Modeled the urban parking assignment problem as both a graph search task and a Markov Decision Process, to directly compare deterministic optimization against adaptive reinforcement learning on the exact same problem.</p>
+            <p>The urban parking assignment problem, matching drivers to open spots efficiently, modeled as two different problems at once: a graph search task and a Markov Decision Process, to see how deterministic optimization stacks up against adaptive reinforcement learning on the exact same scenarios. The requirement was to solve parking assignment under 3 different constraint scenarios (limited availability, walking-distance limits) and evaluate both approaches on total cost, adaptability, and convergence speed. That was satisfied with two separate solvers built from scratch: Dijkstra's algorithm combined with hill climbing for the deterministic side, and a Q-learning agent for the adaptive side, run head-to-head across all 3 scenarios to produce a direct comparison.</p>
+            <h4>Why</h4>
+            <p>Course project for CP468 Artificial Intelligence, built with a 4-person team as a way to explore two different AI paradigms, search-based optimization and reinforcement learning, on the same real-world problem rather than in isolation.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>Python</li>
@@ -105,7 +109,9 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>Built for CP317 Software Engineering as part of a 7-person team. A full-stack desktop application enabling customers to browse vehicles, make reservations, and manage bookings through a dynamic interface, backed by a secure admin dashboard, practicing a full Agile lifecycle across the team.</p>
+            <p>A full-stack desktop application that lets customers browse available vehicles, make reservations, and manage bookings through a dynamic interface, backed by a secure admin dashboard for staff to oversee the fleet. The core logic centers on three pieces: vehicle availability tracking to stop double-bookings, pricing calculation logic that adjusts to rental duration and vehicle type, and role-based access control separating what customers and admins can see and do. The requirement was to deliver a working, full-stack system across a complete Agile lifecycle, requirements gathering, sprint planning, and delivery, as a 7-person team, which was satisfied with a C# and WPF frontend backed by a PostgreSQL database through Entity Framework.</p>
+            <h4>Why</h4>
+            <p>Course project for CP317 Software Engineering, run as a 7-person team specifically to practice a full Agile lifecycle end to end rather than just writing code from a finished spec.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>C#, WPF</li>
@@ -131,7 +137,9 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>Built for CP363 Database Systems with a partner. Designed to go through the complete database lifecycle rather than writing isolated queries: ER/EER modeling of an equipment testing center, through relational schema design, to formally proving the result is normalized, to a real application built on top.</p>
+            <p>Built to go through the complete database lifecycle for an equipment testing center rather than just writing isolated queries: ER/EER modeling of the real-world entities and relationships, translating that into a relational schema, then formally proving the result was properly normalized, and finally building a real application on top of it. The core logic lives in an 11-table schema with enforced primary/foreign key and CHECK constraints, plus subqueries, correlated subqueries, and window functions to support reporting-style queries, and views built on nested subqueries to simplify repeated access patterns. The requirement was a schema proven correct through formal normalization, satisfied by carrying it through to 3NF and BCNF, then a working Python CLI menu and Tkinter GUI were built on top so the database was actually usable, not just theoretically sound.</p>
+            <h4>Why</h4>
+            <p>Course project for CP363 Database Systems, built with a partner specifically to practice full database design, from modeling and normalization proofs through to a real interface, rather than working with a schema that was already handed to us.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>MySQL, Python, Tkinter</li>
@@ -150,7 +158,7 @@
         <div class="acc-head">
           <div style="flex:1;">
             <span class="pname">Digits of e, Digital Logic Circuit</span>
-            <span class="ptag">CP 220 · Digital Electronics</span>
+            <span class="ptag">CP220 Digital Electronics · Individual project</span>
             <a class="see-project-pill" href="assets/cp220-digits-of-e-project.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
           </div>
           <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
@@ -158,13 +166,16 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>Built for CP 220 Digital Electronics as an individual project. The core concept: a 4-bit combinational logic circuit that takes a binary input representing a decimal place and outputs the corresponding digit of the mathematical constant e, going all the way from a truth table to minimized, working hardware logic.</p>
+            <p>A 4-bit combinational logic circuit that takes a binary input representing a decimal place (0 through 10) and outputs the corresponding digit of the mathematical constant e, with invalid inputs (11 through 15) correctly forced to output 0000. The core logic was derived the proper hardware-design way: a truth table was built for all 16 possible 4-bit inputs against the 4 output bits (O0-O3), each output was simplified using Karnaugh maps into a minimized Boolean SOP expression, and those expressions were then implemented as AND/OR/NOT gate networks. The requirement was for the circuit to correctly output the right digit of e for every valid input and cleanly reject invalid ones, satisfied by simulating the full gate-level circuit and testing it against all 16 input combinations before confirming it matched the truth table exactly.</p>
+            <h4>Why</h4>
+            <p>Individual project for CP 220 Digital Electronics, a hands-on exercise in carrying a problem all the way from a truth table to minimized, working hardware logic rather than stopping at the equations on paper.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>Truth tables</li>
               <li>Karnaugh maps</li>
               <li>Minimized Boolean (SOP) expressions</li>
-              <li>Simulated and validated circuit behavior across all 16 input combinations, including proper handling of invalid states</li>
+              <li>Maxima, used to algebraically verify each derived Boolean equation against the truth table before building anything</li>
+              <li>CircuitVerse, used to build the actual gate-level circuit and simulate it across all 16 input combinations, including proper handling of invalid states</li>
             </ul>
             <a class="acc-source-link" href="assets/cp220-digits-of-e-project.pdf" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="fa-solid fa-file-pdf"></i> View project PDF</a>
           </div>
@@ -175,7 +186,7 @@
         <div class="acc-head">
           <div style="flex:1;">
             <span class="pname">NaviGo, Travel &amp; Logistics Platform UX Strategy</span>
-            <span class="ptag">UX103 · UX Strategy</span>
+            <span class="ptag">UX103 UX Strategy · Individual work</span>
             <a class="see-project-pill" href="https://www.figma.com/proto/Aq3YMSAm44AS9F0Ndw0NAg/UX-103-Assignment-4?node-id=1-2&amp;starting-point-node-id=1%3A2&amp;t=MIHs8RQrkSUUFZQD-1" target="_blank" rel="noopener" onclick="event.stopPropagation()">View Project</a>
           </div>
           <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
@@ -183,10 +194,12 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>Built for UX103 UX Strategy. Designed the UX strategy for an all-in-one travel platform concept combining ride-hailing, car rentals, public transit, and food/courier delivery, defining the target audience, information architecture, and a full site map.</p>
+            <p>A UX strategy for an all-in-one travel platform concept combining ride-hailing, car rentals, public transit, and food/courier delivery into a single product. The core work was structural rather than visual: defining the target audience, mapping the information architecture, and producing a full 12-page site map before any screens were designed, backed by competitor research on Uber and Lyft across pricing, UX, and market positioning to inform where NaviGo should differentiate. The requirement was a strategic UX plan capable of guiding real design work, satisfied by carrying that research and site map through into wireframes, mockups, and a clickable interactive prototype covering the platform's key flows.</p>
+            <h4>Why</h4>
+            <p>Course project for UX103 UX Strategy, built to practice translating a broad, multi-service product idea into a structured, defensible UX plan before jumping into visual design.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
-              <li>Figma</li>
+              <li>Figma, used for wireframes, mockups, and the interactive prototype</li>
               <li>12-page site map</li>
               <li>Competitor research on Uber and Lyft across pricing, UX, and market positioning</li>
               <li>Deliverables plan spanning wireframes, mockups, and an interactive prototype</li>
