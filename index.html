@@ -9,6 +9,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* Page-local layout tuning (index.html only) */
+
+  /* Hero: keep intro + Dijkstra widget side by side, buttons below spanning both */
+  .hero-grid { grid-template-areas: "intro dijkstra" "cta dijkstra"; }
+  .hero-intro { grid-area: intro; }
+  .schematic-wrap { grid-area: dijkstra; }
+  .cta-row { grid-area: cta; margin-top: 8px; }
+
+  /* About section text sizing */
+  .about-intro p { font-size: 0.93rem; }
+  .ld-box ul { font-size: 0.85rem; }
+
+  /* Relevant Courses: reveal-more toggle (mobile only) */
+  .rc-toggle { display: none; }
+
+  @media (max-width: 760px) {
+    /* ---- Hero: intro (left) + Dijkstra widget (right) on one row, buttons full-width below ---- */
+    .hero-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "intro dijkstra" "cta cta"; gap: 10px 14px; align-items: start; }
+    .hero-intro { padding-right: 8px; }
+    .hero-intro .eyebrow { font-size: 0.6rem; margin-bottom: 6px; }
+    h1.hero-name { font-size: 1rem; white-space: normal; line-height: 1.25; }
+    .lede { font-size: 0.7rem; line-height: 1.5; margin: 8px 0; max-width: none; }
+    .hero-meta { font-size: 0.62rem; margin: 8px 0 0; }
+    .hero-meta .sep { margin: 0 5px; }
+    .cta-row { margin-top: 14px; }
+
+    .schematic-card { padding: 12px; }
+    .schematic-head .eyebrow { font-size: 0.6rem; }
+    #statusLabel { font-size: 0.6rem !important; }
+    .dij-instructions { font-size: 0.6rem; margin-top: 6px; }
+    .dij-legend { font-size: 0.56rem; gap: 8px; margin-top: 6px; }
+    .legend-dot { width: 7px; height: 7px; }
+    .schematic-foot .btn.small { padding: 5px 10px; font-size: 0.7rem; }
+
+    /* ---- About: single stacked column, para -> Likes -> Dislikes -> Interests ---- */
+    .about-intro { padding: 16px; }
+    .about-intro p { font-size: 0.82rem; line-height: 1.55; }
+    .ld-box { padding: 13px; }
+    .ld-box .ld-title { font-size: 0.74rem; gap: 6px; margin-bottom: 8px; }
+    .ld-box ul { font-size: 0.75rem; padding-left: 14px; line-height: 1.45; }
+    .ld-box li { margin-bottom: 4px; }
+    .interests-box { padding: 14px 16px; }
+    .interests-box p { font-size: 0.8rem; }
+
+    /* ---- Relevant Courses: show top 4, reveal the rest with a toggle ---- */
+    .rc-card.rc-extra { display: none; }
+    .rc-grid.rc-expanded .rc-card.rc-extra { display: flex; }
+    .rc-toggle {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; margin-top: 12px; padding: 10px; border: 1px solid var(--border);
+      border-radius: 999px; background: var(--surface-alt); font-size: 0.82rem; font-weight: 600;
+      color: var(--ink); cursor: pointer; font-family: inherit;
+    }
+    .rc-toggle i { transition: transform .2s ease; }
+    .rc-toggle.expanded i { transform: rotate(180deg); }
+  }
+</style>
 </head>
 <body>
 
@@ -40,15 +98,11 @@
 
 <section class="wrap hero-content">
   <div class="hero-grid">
-    <div class="reveal">
+    <div class="hero-intro reveal">
       <div class="eyebrow">Computer Science · Software Engineering &amp; AI</div>
       <h1 class="hero-name">Moosa Ahmed | BSc CS @ WLU</h1>
       <p class="lede">Hey, welcome! I'm Moosa, a Computer Science student who loves turning ideas into working systems and figuring out how things run under the hood. Take a look around, I'd love for you to see what I've been building and where I'm hoping to land next.</p>
       <div class="hero-meta">Waterloo, ON<span class="sep">·</span>Final year, expected Dec 2026<span class="sep">·</span>Open to internships</div>
-      <div class="cta-row">
-        <a href="resume.html" class="btn solid">View Résumé</a>
-        <a href="projects.html" class="btn">See Projects</a>
-      </div>
     </div>
     <div class="schematic-wrap reveal">
       <div class="schematic-card" id="schematicCard">
@@ -92,6 +146,10 @@
         </div>
       </div>
     </div>
+    <div class="cta-row reveal">
+      <a href="resume.html" class="btn solid">View Résumé</a>
+      <a href="projects.html" class="btn">See Projects</a>
+    </div>
   </div>
 </section>
 
@@ -105,24 +163,7 @@
       <div class="about-intro">
         <p>I'm a final-year student at Wilfrid Laurier University, majoring in Computer Science with a concentration in Artificial Intelligence and Software Engineering. Right now I'm building ParkSense AI, a B2B SaaS platform that helps parking operators cut down on lost revenue and helps drivers find a spot faster. My coursework has spanned everything from digital electronics and database systems to machine learning and UX strategy, and as I head into my final terms I'm looking forward to specializing further in AI and data-driven systems while gaining hands-on industry experience.</p>
       </div>
-      <div class="ld-grid">
-        <div class="ld-box">
-          <div class="ld-title"><span class="dot good"></span>Strengths</div>
-          <ul>
-            <li>Always ready to learn and excited to adapt to new technologies</li>
-            <li>Always give my input on a problem, helps me improve and learn</li>
-            <li>Take feedback seriously and use it to improve, rather than getting defensive</li>
-          </ul>
-        </div>
-        <div class="ld-box">
-          <div class="ld-title"><span class="dot bad"></span>Weaknesses</div>
-          <ul>
-            <li>Never worked in a professional, cross-functional dev team, most of my work is academic team projects</li>
-            <li>Can be overly critical of my own work</li>
-            <li>Experienced only with a limited range of tools &amp; tech yet</li>
-          </ul>
-        </div>
-      </div>
+      
       <div class="interests-box">
         <div class="ld-title">Interests</div>
         <p style="margin:0;">Robotics, Artificial Intelligence, Machine Learning,The Automotive Industry, Embedded Systems, Cloud Computing, and more.</p>
@@ -217,18 +258,21 @@
       </div>
       <div class="relevant-courses reveal">
       <h3 class="rc-heading">Relevant Courses</h3>
-      <div class="rc-grid">
+      <div class="rc-grid" id="rcGrid">
         <div class="rc-card"><span class="rc-code">CP400V</span><span class="rc-name">Cloud Computing</span></div>
         <div class="rc-card"><span class="rc-code">CP468</span><span class="rc-name">Artificial Intelligence</span></div>
         <div class="rc-card"><span class="rc-code">CP322</span><span class="rc-name">Machine Learning</span></div>
         <div class="rc-card"><span class="rc-code">CP421</span><span class="rc-name">Data Mining</span></div>
-        <div class="rc-card"><span class="rc-code">CP363</span><span class="rc-name">Database I</span></div>
-        <div class="rc-card"><span class="rc-code">CP317</span><span class="rc-name">Software Engineering</span></div>
-        <div class="rc-card"><span class="rc-code">CP386</span><span class="rc-name">Operating Systems</span></div>
-        <div class="rc-card"><span class="rc-code">CP312</span><span class="rc-name">Algorithm Design and Analysis I</span></div>
-        <div class="rc-card"><span class="rc-code">CP264</span><span class="rc-name">Data Structures II</span></div>
-        <div class="rc-card"><span class="rc-code">CP213</span><span class="rc-name">Intro to Object-Oriented Programming</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP363</span><span class="rc-name">Database I</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP317</span><span class="rc-name">Software Engineering</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP386</span><span class="rc-name">Operating Systems</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP312</span><span class="rc-name">Algorithm Design and Analysis I</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP264</span><span class="rc-name">Data Structures II</span></div>
+        <div class="rc-card rc-extra"><span class="rc-code">CP213</span><span class="rc-name">Intro to Object-Oriented Programming</span></div>
       </div>
+      <button type="button" class="rc-toggle" id="rcToggle" aria-expanded="false">
+        <span>Show more courses</span> <i class="fa-solid fa-chevron-down"></i>
+      </button>
     </div>
     </div>
   </div>
@@ -335,5 +379,19 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  /* Page-local: Relevant Courses "show more" toggle (index.html only) */
+  (function () {
+    var btn = document.getElementById('rcToggle');
+    var grid = document.getElementById('rcGrid');
+    if (!btn || !grid) return;
+    btn.addEventListener('click', function () {
+      var expanded = grid.classList.toggle('rc-expanded');
+      btn.classList.toggle('expanded', expanded);
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.querySelector('span').textContent = expanded ? 'Show fewer courses' : 'Show more courses';
+    });
+  })();
+</script>
 </body>
 </html>
