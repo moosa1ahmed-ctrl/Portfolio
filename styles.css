@@ -128,7 +128,8 @@ section { padding: 72px 0; }
 .hero-content { padding-top: 56px; }
 .photo-banner {
   position: relative; height: 220px; border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--surface-alt), #E4E9F5);
+  background: linear-gradient(135deg, rgba(20,26,45,0.15)), url('assets/cover-banner.jpg');
+  background-size: cover; background-position: center;
   border: 1px solid var(--border);
 }
 .avatar-circle {
