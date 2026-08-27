@@ -253,3 +253,146 @@ if (svg) {
   redrawWeightLabels();
   if (statusLabel) statusLabel.textContent = 'click a start node';
 }
+
+/* ---------- Course category carousels (Education page) ---------- */
+(function initCourseCarousels() {
+  const carousels = document.querySelectorAll('[data-crsl]');
+  if (!carousels.length) return;
+
+  function setup(root) {
+    const track = root.querySelector('.crsl-track');
+    const viewport = root.querySelector('.crsl-viewport');
+    const prevBtn = root.querySelector('.crsl-prev');
+    const nextBtn = root.querySelector('.crsl-next');
+    const dotsWrap = root.querySelector('.crsl-dots');
+    const cards = Array.from(track.children);
+    if (!track || !viewport || !cards.length) return;
+
+    let perView = 3;
+    let maxIndex = 0;
+    let index = 0;
+    let cardWidth = 0;
+    let gap = 14;
+
+    function getPerView() {
+      const v = parseInt(getComputedStyle(root).getPropertyValue('--crsl-per-view'), 10);
+      return (!isNaN(v) && v > 0) ? Math.min(v, cards.length) : 1;
+    }
+
+    function measure() {
+      gap = parseFloat(getComputedStyle(track).gap) || 14;
+      perView = getPerView();
+      maxIndex = Math.max(0, cards.length - perView);
+      if (index > maxIndex) index = maxIndex;
+      // clientWidth includes the viewport's own left/right padding, but cards
+      // only have the *content* box to lay out in — subtract that padding first,
+      // or the last card overflows past the visible area and gets clipped.
+      const vpStyles = getComputedStyle(viewport);
+      const padLeft = parseFloat(vpStyles.paddingLeft) || 0;
+      const padRight = parseFloat(vpStyles.paddingRight) || 0;
+      const vw = viewport.clientWidth - padLeft - padRight;
+      cardWidth = (vw - gap * (perView - 1)) / perView;
+      track.style.setProperty('--crsl-card-w', cardWidth + 'px');
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const total = maxIndex + 1;
+      if (total <= 1) { dotsWrap.style.display = 'none'; return; }
+      dotsWrap.style.display = '';
+      for (let i = 0; i < total; i++) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'crsl-dot' + (i === index ? ' active' : '');
+        b.setAttribute('aria-label', 'Go to card ' + (i + 1));
+        b.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(b);
+      }
+    }
+
+    function updateDots() {
+      const dots = dotsWrap.querySelectorAll('.crsl-dot');
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    function updateArrows() {
+      if (prevBtn) prevBtn.disabled = index <= 0;
+      if (nextBtn) nextBtn.disabled = index >= maxIndex;
+    }
+
+    function render(animate) {
+      track.style.transition = animate ? '' : 'none';
+      const offset = index * (cardWidth + gap);
+      track.style.transform = `translateX(${-offset}px)`;
+      if (!animate) {
+        // force reflow then restore transition for future moves
+        void track.offsetHeight;
+        track.style.transition = '';
+      }
+      updateArrows();
+      updateDots();
+    }
+
+    function goTo(i, animate = true) {
+      index = Math.max(0, Math.min(maxIndex, i));
+      render(animate);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goTo(index - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goTo(index + 1));
+
+    /* --- drag / swipe (mouse + touch, via Pointer Events) --- */
+    let dragging = false;
+    let startX = 0;
+    let baseOffset = 0;
+    let dragDx = 0;
+
+    function onPointerDown(e) {
+      dragging = true;
+      startX = e.clientX;
+      dragDx = 0;
+      baseOffset = index * (cardWidth + gap);
+      track.classList.add('dragging');
+      try { track.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+    function onPointerMove(e) {
+      if (!dragging) return;
+      dragDx = e.clientX - startX;
+      track.style.transform = `translateX(${-baseOffset + dragDx}px)`;
+    }
+    function onPointerUp() {
+      if (!dragging) return;
+      dragging = false;
+      track.classList.remove('dragging');
+      const threshold = Math.max(40, cardWidth * 0.15);
+      if (Math.abs(dragDx) > threshold) {
+        if (dragDx < 0 && index < maxIndex) index += 1;
+        else if (dragDx > 0 && index > 0) index -= 1;
+      }
+      dragDx = 0;
+      render(true);
+    }
+
+    track.addEventListener('pointerdown', onPointerDown);
+    track.addEventListener('pointermove', onPointerMove);
+    track.addEventListener('pointerup', onPointerUp);
+    track.addEventListener('pointercancel', onPointerUp);
+    track.addEventListener('pointerleave', () => { if (dragging) onPointerUp(); });
+
+    function refresh() {
+      measure();
+      buildDots();
+      render(false);
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(refresh, 120);
+    });
+
+    refresh();
+  }
+
+  carousels.forEach(setup);
+})();
