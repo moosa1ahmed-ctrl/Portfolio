@@ -1,27 +1,18 @@
-# Personal Portfolio
+# Moosa Ahmed — Portfolio
 
-This repository contains my personal portfolio website.
+My personal portfolio site, hosted on GitHub Pages: https://moosa1ahmed-ctrl.github.io/Portfolio/
 
-## About
+## What's here
 
-The website showcases my:
+A multi-page site covering education & coursework, technical skills, projects, work experience, certifications, and a résumé — plus a small interactive Dijkstra's algorithm visualizer on the homepage (real graph search, not a canned animation).
 
-- Education
-- Skills
-- Projects
-- Work Experience
-- Certifications
-- Resume
+## Built with
 
-## Technologies
+Plain HTML5, CSS3, and JavaScript — no frameworks or build step. Each page shares one `styles.css` and one `script.js`; there's no inline CSS or JS anywhere in the markup.
 
-- HTML5
-- CSS3
-- JavaScript
+## A note on academic records
 
-## Website
-
-This portfolio is hosted using GitHub Pages.
+Detailed transcripts aren't hosted here. The coursework and grades shown on the Education page reflect my actual academic record, and the source documents (WLU, WLIC, Cambridge O-Level) are available on request — they carry more personal detail (student numbers, addresses, national ID numbers on some certificates) than a public portfolio should expose.
 
 ## Author
 

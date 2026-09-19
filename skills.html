@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#1D4ED8">
 <title>Skills · Moosa Ahmed</title>
+<meta name="description" content="Technical skills across Python, C#, SQL, .NET/WPF, PostgreSQL, MySQL, and core computer science concepts.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Skills · Moosa Ahmed">
+<meta property="og:description" content="Technical skills across Python, C#, SQL, .NET/WPF, PostgreSQL, MySQL, and core computer science concepts.">
+<meta property="og:url" content="https://moosa1ahmed-ctrl.github.io/Portfolio/skills.html">
+<meta property="og:image" content="https://moosa1ahmed-ctrl.github.io/Portfolio/assets/cover-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Skills · Moosa Ahmed">
+<meta name="twitter:description" content="Technical skills across Python, C#, SQL, .NET/WPF, PostgreSQL, MySQL, and core computer science concepts.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -11,11 +24,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
 <nav>
   <div class="wrap navwrap">
     <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <div class="navlinks" id="navlinks">
       <a href="index.html">Profile</a>
       <a href="projects.html">Projects</a>
@@ -32,6 +46,8 @@
   </div>
 </nav>
 
+<main>
+
 <header class="page-head wrap reveal">
   <div class="eyebrow">Technical Skills</div>
   <h1>Languages, frameworks &amp; concepts</h1>
@@ -43,7 +59,7 @@
 
     <h3 class="skill-group-title reveal">Languages</h3>
     <div class="skill-detail-grid reveal">
-      <div class="skill-item"><span class="sname">Python</span><p>Used across AI/ML coursework, the Smart Parking RL project, and the ParkSense AI backend.</p></div>
+      <div class="skill-item"><span class="sname">Python</span><p>Used across AI/ML coursework and the Smart Parking RL project.</p></div>
       <div class="skill-item"><span class="sname">C#</span><p>Built the Car Rental System's WPF desktop app and its Entity Framework Core data layer.</p></div>
       <div class="skill-item"><span class="sname">Java</span><p>Coursework language for data structures and object-oriented design.</p></div>
       <div class="skill-item"><span class="sname">C</span><p>Used in Operating Systems coursework: POSIX system calls, file/directory management.</p></div>
@@ -59,13 +75,12 @@
     <div class="skill-detail-grid reveal">
       <div class="skill-item"><span class="sname">.NET / WPF</span><p>Desktop UI framework used to build the Car Rental System.</p></div>
       <div class="skill-item"><span class="sname">Entity Framework Core</span><p>ORM connecting the Car Rental System to PostgreSQL, including migrations.</p></div>
-      <div class="skill-item"><span class="sname">FastAPI</span><p>Backend framework currently powering ParkSense AI's API layer.</p></div>
       <div class="skill-item"><span class="sname">Tkinter</span><p>Built the GUI application for the Equipment Test Center DBMS project.</p></div>
     </div>
 
     <h3 class="skill-group-title reveal">Databases</h3>
     <div class="skill-detail-grid reveal">
-      <div class="skill-item"><span class="sname">PostgreSQL</span><p>Used in Car Rental System and ParkSense AI.</p></div>
+      <div class="skill-item"><span class="sname">PostgreSQL</span><p>Used in the Car Rental System's data layer.</p></div>
       <div class="skill-item"><span class="sname">MySQL</span><p>Designed and normalized an 11-table schema for the Equipment Test Center DBMS.</p></div>
     </div>
 
@@ -91,6 +106,8 @@
 
   </div>
 </section>
+
+</main>
 
 <footer id="contact">
   <div class="wrap">

@@ -2,7 +2,10 @@
 const menuToggle = document.getElementById('menuToggle');
 const navlinks = document.getElementById('navlinks');
 if (menuToggle && navlinks) {
-  menuToggle.addEventListener('click', () => navlinks.classList.toggle('open'));
+  menuToggle.addEventListener('click', () => {
+    const isOpen = navlinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 }
 
 /* ---------- Active nav link ---------- */
@@ -395,4 +398,17 @@ if (svg) {
   }
 
   carousels.forEach(setup);
+})();
+
+/* ---------- Relevant Courses "show more" toggle (index.html only) ---------- */
+(function () {
+  var btn = document.getElementById('rcToggle');
+  var grid = document.getElementById('rcGrid');
+  if (!btn || !grid) return;
+  btn.addEventListener('click', function () {
+    var expanded = grid.classList.toggle('rc-expanded');
+    btn.classList.toggle('expanded', expanded);
+    btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    btn.querySelector('span').textContent = expanded ? 'Show fewer courses' : 'Show more courses';
+  });
 })();

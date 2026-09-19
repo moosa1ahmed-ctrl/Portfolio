@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#1D4ED8">
 <title>Résumé · Moosa Ahmed</title>
+<meta name="description" content="View or download Moosa Ahmed's résumé as a PDF.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Résumé · Moosa Ahmed">
+<meta property="og:description" content="View or download Moosa Ahmed's résumé as a PDF.">
+<meta property="og:url" content="https://moosa1ahmed-ctrl.github.io/Portfolio/resume.html">
+<meta property="og:image" content="https://moosa1ahmed-ctrl.github.io/Portfolio/assets/cover-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Résumé · Moosa Ahmed">
+<meta name="twitter:description" content="View or download Moosa Ahmed's résumé as a PDF.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -11,11 +24,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
 <nav>
   <div class="wrap navwrap">
     <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <div class="navlinks" id="navlinks">
       <a href="index.html">Profile</a>
       <a href="projects.html">Projects</a>
@@ -32,6 +46,8 @@
   </div>
 </nav>
 
+<main>
+
 <header class="page-head wrap reveal">
   <div class="eyebrow">Résumé</div>
   <h1>My Résumé</h1>
@@ -43,23 +59,25 @@
       <div class="doc-acc-item">
         <div class="doc-acc-head">
           <div>
-            <h3 style="margin-bottom:2px;">Moosa Ahmed, Résumé</h3>
+            <h3 class="doc-title">Moosa Ahmed, Résumé</h3>
             <span class="ptag">PDF · click to preview</span>
           </div>
           <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
         </div>
         <div class="doc-acc-body">
-          <p style="padding:16px 22px 0;">
-            <a class="btn solid" href="assets/resume.pdf?v=2" target="_blank" rel="noopener">
+          <p class="doc-acc-action">
+            <a class="btn solid" href="assets/resume.pdf?v=3" target="_blank" rel="noopener">
               <i class="fa-solid fa-file-pdf"></i>&nbsp; Open Résumé (PDF)
             </a>
           </p>
-          <iframe src="assets/resume.pdf?v=2" title="Moosa Ahmed résumé"></iframe>
+          <iframe src="assets/resume.pdf?v=3" title="Moosa Ahmed résumé"></iframe>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer id="contact">
   <div class="wrap">

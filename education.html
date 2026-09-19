@@ -3,7 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#1D4ED8">
 <title>Education &amp; Courses · Moosa Ahmed</title>
+<meta name="description" content="Education history and coursework for Moosa Ahmed, Honours BSc Computer Science at Wilfrid Laurier University.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Education & Courses · Moosa Ahmed">
+<meta property="og:description" content="Education history and coursework for Moosa Ahmed, Honours BSc Computer Science at Wilfrid Laurier University.">
+<meta property="og:url" content="https://moosa1ahmed-ctrl.github.io/Portfolio/education.html">
+<meta property="og:image" content="https://moosa1ahmed-ctrl.github.io/Portfolio/assets/cover-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Education & Courses · Moosa Ahmed">
+<meta name="twitter:description" content="Education history and coursework for Moosa Ahmed, Honours BSc Computer Science at Wilfrid Laurier University.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -11,11 +24,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
 <nav>
   <div class="wrap navwrap">
     <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <div class="navlinks" id="navlinks">
       <a href="index.html">Profile</a>
       <a href="projects.html">Projects</a>
@@ -32,10 +46,12 @@
   </div>
 </nav>
 
+<main>
+
 <header class="page-head wrap reveal">
   <div class="eyebrow">Education</div>
   <h1>WLU · WLIC · The City School</h1>
-  <p class="sec-sub">Final-year Honours BSc Computer Science, Software Engineering &amp; AI concentration. Scroll through each category below.</p>
+  <p class="sec-sub">Final-year Honours BSc Computer Science. Scroll through each category below.</p>
 </header>
 
 <section>
@@ -264,44 +280,14 @@
       <div class="eyebrow">Records</div>
       <h2>Transcripts &amp; Results</h2>
     </div>
-    <div class="accordion reveal">
-
-      <div class="doc-acc-item">
-        <div class="doc-acc-head">
-          <div>
-            <h3 style="margin-bottom:2px;">WLU: Record of Course Work</h3>
-            <span class="ptag">Wilfrid Laurier University · not an official transcript</span>
-          </div>
-          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-        <div class="doc-acc-body"><iframe src="assets/wlu-transcript.pdf" title="WLU record of course work"></iframe></div>
-      </div>
-
-      <div class="doc-acc-item">
-        <div class="doc-acc-head">
-          <div>
-            <h3 style="margin-bottom:2px;">WLIC: Unofficial Record of Grades</h3>
-            <span class="ptag">Wilfrid Laurier International College</span>
-          </div>
-          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-        <div class="doc-acc-body"><iframe src="assets/wlic-transcript.pdf" title="WLIC unofficial record of grades"></iframe></div>
-      </div>
-
-      <div class="doc-acc-item">
-        <div class="doc-acc-head">
-          <div>
-            <h3 style="margin-bottom:2px;">Cambridge O-Level Results</h3>
-            <span class="ptag">The City School, North Nazimabad · Cambridge Assessment International Education</span>
-          </div>
-          <div class="acc-toggle"><i class="fa-solid fa-chevron-down"></i></div>
-        </div>
-        <div class="doc-acc-body"><iframe src="assets/olevel-results.pdf" title="Cambridge O-Level results"></iframe></div>
-      </div>
-
+    <div class="card reveal">
+      <p>Official academic records (Wilfrid Laurier University, Wilfrid Laurier International College, and Cambridge O-Level results) are available on request — the coursework and grades above reflect them. I keep the source documents private since they carry more personal detail than a portfolio needs.</p>
     </div>
+
   </div>
 </section>
+
+</main>
 
 <footer id="contact">
   <div class="wrap">

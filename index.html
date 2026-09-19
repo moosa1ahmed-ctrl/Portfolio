@@ -3,77 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="theme-color" content="#1D4ED8">
 <title>Moosa Ahmed · Computer Science Student</title>
+<meta name="description" content="Final-year Computer Science student at Wilfrid Laurier University. Projects in reinforcement learning, database design, and full-stack development.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moosa Ahmed — Computer Science Student">
+<meta property="og:description" content="Final-year Computer Science student at Wilfrid Laurier University. Projects in reinforcement learning, database design, and full-stack development.">
+<meta property="og:url" content="https://moosa1ahmed-ctrl.github.io/Portfolio/">
+<meta property="og:image" content="https://moosa1ahmed-ctrl.github.io/Portfolio/assets/cover-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moosa Ahmed — Computer Science Student">
+<meta name="twitter:description" content="Final-year Computer Science student at Wilfrid Laurier University. Projects in reinforcement learning, database design, and full-stack development.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
-<style>
-  /* Page-local layout tuning (index.html only) */
-
-  /* Hero: keep intro + Dijkstra widget side by side, buttons below spanning both */
-  .hero-grid { grid-template-areas: "intro dijkstra" "cta dijkstra"; }
-  .hero-intro { grid-area: intro; }
-  .schematic-wrap { grid-area: dijkstra; }
-  .cta-row { grid-area: cta; margin-top: 8px; }
-
-  /* About section text sizing */
-  .about-intro p { font-size: 0.93rem; }
-  .ld-box ul { font-size: 0.85rem; }
-
-  /* Relevant Courses: reveal-more toggle (mobile only) */
-  .rc-toggle { display: none; }
-
-  @media (max-width: 760px) {
-    /* ---- Hero: intro (left) + Dijkstra widget (right) on one row, buttons full-width below ---- */
-    .hero-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "intro dijkstra" "cta cta"; gap: 10px 14px; align-items: start; }
-    .hero-intro { padding-right: 8px; }
-    .hero-intro .eyebrow { font-size: 0.6rem; margin-bottom: 6px; }
-    h1.hero-name { font-size: 1rem; white-space: normal; line-height: 1.25; }
-    .lede { font-size: 0.7rem; line-height: 1.5; margin: 8px 0; max-width: none; }
-    .hero-meta { font-size: 0.62rem; margin: 8px 0 0; }
-    .hero-meta .sep { margin: 0 5px; }
-    .cta-row { margin-top: 14px; }
-
-    .schematic-card { padding: 12px; }
-    .schematic-head .eyebrow { font-size: 0.6rem; }
-    #statusLabel { font-size: 0.6rem !important; }
-    .dij-instructions { font-size: 0.6rem; margin-top: 6px; }
-    .dij-legend { font-size: 0.56rem; gap: 8px; margin-top: 6px; }
-    .legend-dot { width: 7px; height: 7px; }
-    .schematic-foot .btn.small { padding: 5px 10px; font-size: 0.7rem; }
-
-    /* ---- About: single stacked column, para -> Likes -> Dislikes -> Interests ---- */
-    .about-intro { padding: 16px; }
-    .about-intro p { font-size: 0.82rem; line-height: 1.55; }
-    .ld-box { padding: 13px; }
-    .ld-box .ld-title { font-size: 0.74rem; gap: 6px; margin-bottom: 8px; }
-    .ld-box ul { font-size: 0.75rem; padding-left: 14px; line-height: 1.45; }
-    .ld-box li { margin-bottom: 4px; }
-    .interests-box { padding: 14px 16px; }
-    .interests-box p { font-size: 0.8rem; }
-
-    /* ---- Relevant Courses: show top 4, reveal the rest with a toggle ---- */
-    .rc-card.rc-extra { display: none; }
-    .rc-grid.rc-expanded .rc-card.rc-extra { display: flex; }
-    .rc-toggle {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; margin-top: 12px; padding: 10px; border: 1px solid var(--border);
-      border-radius: 999px; background: var(--surface-alt); font-size: 0.82rem; font-weight: 600;
-      color: var(--ink); cursor: pointer; font-family: inherit;
-    }
-    .rc-toggle i { transition: transform .2s ease; }
-    .rc-toggle.expanded i { transform: rotate(180deg); }
-  }
-</style>
 </head>
 <body>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 
 <nav>
   <div class="wrap navwrap">
     <a href="index.html" class="brand">&lt;/moosa_ahmed&gt; <span class="tag">// cs</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">☰</button>
     <div class="navlinks" id="navlinks">
       <a href="index.html">Profile</a>
       <a href="projects.html">Projects</a>
@@ -90,6 +46,8 @@
   </div>
 </nav>
 
+<main>
+
 <header class="hero wrap">
   <div class="photo-banner reveal">
     <div class="avatar-circle"><img src="assets/profile-photo.jpg" alt="Moosa Ahmed" class="avatar-photo"></div>
@@ -100,15 +58,15 @@
 <section class="wrap hero-content">
   <div class="hero-grid">
     <div class="hero-intro reveal">
-      <div class="eyebrow">Computer Science · Software Engineering &amp; AI</div>
+      <div class="eyebrow">Computer Science Student</div>
       <h1 class="hero-name">Moosa Ahmed | BSc CS @ WLU</h1>
-      <p class="lede">Hey, welcome! I'm Moosa, a Computer Science student who loves turning ideas into working systems and figuring out how things run under the hood. Take a look around, I'd love for you to see what I've been building and where I'm hoping to land next.</p>
+      <p class="lede">Hey, welcome! I'm Moosa — I like building things, breaking them, and figuring out why they broke. Take a look around at what I've been working on, and where I'm hoping to land next.</p>
       <div class="hero-meta">Waterloo, ON<span class="sep">·</span>Final year, expected Dec 2026<span class="sep">·</span>Open to internships</div>
     </div>
     <div class="schematic-wrap reveal">
       <div class="schematic-card" id="schematicCard">
         <div class="schematic-head">
-          <div class="eyebrow" style="margin:0;">Interactive · Dijkstra's algorithm</div>
+          <div class="eyebrow">Interactive · Dijkstra's algorithm</div>
         </div>
         <svg viewBox="0 0 340 300" width="100%" id="schematicSvg">
           <line class="edge" id="e-A-S" x1="60" y1="40" x2="160" y2="90"/>
@@ -135,7 +93,7 @@
           <g id="n-E"><circle class="node" cx="60" cy="250" r="14"/><text class="node-label" x="60" y="272" text-anchor="middle">E</text></g>
           <g id="n-G"><circle class="node" cx="280" cy="270" r="15"/><text class="node-label" x="280" y="292" text-anchor="middle">G</text></g>
         </svg>
-        <p id="statusLabel" style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-faint); margin:8px 0 0;">click a start node</p>
+        <p id="statusLabel">click a start node</p>
         <p class="dij-instructions">Click a node to set start, another to set end, and it runs real Dijkstra on the current weights. Click any edge to change its weight.</p>
         <div class="dij-legend">
           <span><span class="legend-dot start"></span>start</span>
@@ -162,12 +120,12 @@
     </div>
     <div class="card about-card reveal">
       <div class="about-intro">
-        <p>I'm a final-year student at Wilfrid Laurier University, majoring in Computer Science with a concentration in Artificial Intelligence and Software Engineering. Right now I'm building ParkSense AI, a B2B SaaS platform that helps parking operators cut down on lost revenue and helps drivers find a spot faster. My coursework has spanned everything from digital electronics and database systems to machine learning and UX strategy, and as I head into my final terms I'm looking forward to specializing further in AI and data-driven systems while gaining hands-on industry experience.</p>
+        <p>I'm a final-year student at Wilfrid Laurier University, majoring in Computer Science. My coursework has covered everything from digital electronics and database systems to software engineering and UX strategy, and I've picked up most of what I actually know by building real projects alongside it. As I head into my final terms, I'm focused on gaining hands-on industry experience and growing as a developer.</p>
       </div>
       
       <div class="interests-box">
         <div class="ld-title">Interests</div>
-        <p style="margin:0;">Robotics, Artificial Intelligence, Machine Learning,The Automotive Industry, Embedded Systems, Cloud Computing, and more.</p>
+        <p>Robotics, Artificial Intelligence, Machine Learning,The Automotive Industry, Embedded Systems, Cloud Computing, and more.</p>
       </div>
     </div>
   </div>
@@ -210,7 +168,7 @@
           <span class="ptools">Figma, UX Research</span>
         </a>
       </div>
-      <a href="projects.html" class="btn solid" style="width:100%; justify-content:center;">View All Projects</a>
+      <a href="projects.html" class="btn solid btn-full">View All Projects</a>
     </div>
   </div>
 </section>
@@ -224,17 +182,17 @@
     <div class="skills-3col reveal">
       <div class="skill-col">
         <h4>Languages</h4>
-        <p style="font-size:0.85rem; margin-bottom:14px;">Python, Java, C, C#, JavaScript, SQL, HTML/CSS, MATLAB, R, ARM</p>
+        <p class="skill-preview-text">Python, Java, C, C#, JavaScript, SQL, HTML/CSS, MATLAB, R, ARM</p>
         <a href="skills.html" class="btn small">View all →</a>
       </div>
       <div class="skill-col">
         <h4>Tools &amp; Platforms</h4>
-        <p style="font-size:0.85rem; margin-bottom:14px;">Git, VS Code, Eclipse, Jupyter, MySQL, PostgreSQL, Linux, Figma</p>
+        <p class="skill-preview-text">Git, VS Code, Eclipse, Jupyter, MySQL, PostgreSQL, Linux, Figma</p>
         <a href="skills.html" class="btn small">View all →</a>
       </div>
       <div class="skill-col">
         <h4>Concepts</h4>
-        <p style="font-size:0.85rem; margin-bottom:14px;">OOP, Data Structures &amp; Algorithms, Reinforcement Learning, DB Design, Agile/Scrum</p>
+        <p class="skill-preview-text">OOP, Data Structures &amp; Algorithms, Reinforcement Learning, DB Design, Agile/Scrum</p>
         <a href="skills.html" class="btn small">View all →</a>
       </div>
     </div>
@@ -249,8 +207,8 @@
     </div>
     <div class="card reveal preview-card-row">
       <div>
-        <h3 style="margin-bottom:4px;">Honours BSc Computer Science, Software Engineering &amp; AI</h3>
-        <p style="margin:0;">Wilfrid Laurier University · Final year · Expected December 2026</p>
+        <h3 class="preview-title">Honours BSc Computer Science</h3>
+        <p>Wilfrid Laurier University · Final year · Expected December 2026</p>
         <span class="cgpa-line cgpa-mobile">CGPA: 11.00/12.00</span>
       </div>
       <div class="edu-cta">
@@ -287,8 +245,8 @@
     </div>
     <div class="card reveal preview-card-row">
       <div>
-        <h3 style="margin-bottom:4px;">Backup Supervisor &amp; Storefront Associate, Tim Hortons</h3>
-        <p style="margin:0;">Nov 2024 – Present · Previously Peer Educator at Wilfrid Laurier University</p>
+        <h3 class="preview-title">Backup Supervisor &amp; Storefront Associate, Tim Hortons</h3>
+        <p>Nov 2024 – Present · Previously Peer Educator at Wilfrid Laurier University</p>
       </div>
       <a href="experience.html" class="btn">Full history →</a>
     </div>
@@ -303,8 +261,8 @@
     </div>
     <div class="card reveal preview-card-row">
       <div>
-        <h3 style="margin-bottom:4px;">Cybersecurity Job Simulation, Forage / Mastercard</h3>
-        <p style="margin:0;">Apr 2026</p>
+        <h3 class="preview-title">Cybersecurity Job Simulation, Forage / Mastercard</h3>
+        <p>Apr 2026</p>
       </div>
       <a href="certifications.html" class="btn">View certificates →</a>
     </div>
@@ -323,16 +281,12 @@
         <div class="label">Final year, Computer Science</div>
       </div>
       <div class="achieve-stat">
-        <div class="num">98%</div>
-        <div class="label">Degree requirements complete</div>
-      </div>
-      <div class="achieve-stat">
         <div class="num">Dec 2026</div>
         <div class="label">Expected graduation</div>
       </div>
     </div>
 
-    <div class="sec-head reveal" style="margin-top:36px;">
+    <div class="sec-head reveal sec-head-spaced">
       <div class="eyebrow">Rewards &amp; Achievements</div>
       <h2>Recognition along the way</h2>
     </div>
@@ -355,33 +309,11 @@
         </div>
       </div>
 
-      <div class="reward-row">
-        <div class="reward-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <div>
-          <div class="reward-title">70% Jump Rule, Wilfrid Laurier International College</div>
-          <div class="reward-desc">Jumped a foundation semester for scoring > 70% in 4 courses simultaneously</div>
-        </div>
-      </div>
-
-      <div class="reward-row">
-        <div class="reward-icon"><i class="fa-solid fa-medal"></i></div>
-        <div>
-          <div class="reward-title">90% Scholarship, The City School (AS-Level)</div>
-          <div class="reward-desc">Awarded for being an High Achiever in O-Levels</div>
-        </div>
-      </div>
-
-      <div class="reward-row">
-        <div class="reward-icon"><i class="fa-solid fa-award"></i></div>
-        <div>
-          <div class="reward-title">High Achiever, The City School (O-Level)</div>
-          <div class="reward-desc">Recognized for scoring 4A*s and 3As in CAIE O-Levels</div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
+
+</main>
 
 <footer id="contact">
   <div class="wrap">
@@ -401,19 +333,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  /* Page-local: Relevant Courses "show more" toggle (index.html only) */
-  (function () {
-    var btn = document.getElementById('rcToggle');
-    var grid = document.getElementById('rcGrid');
-    if (!btn || !grid) return;
-    btn.addEventListener('click', function () {
-      var expanded = grid.classList.toggle('rc-expanded');
-      btn.classList.toggle('expanded', expanded);
-      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-      btn.querySelector('span').textContent = expanded ? 'Show fewer courses' : 'Show more courses';
-    });
-  })();
-</script>
 </body>
 </html>
