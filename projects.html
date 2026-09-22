@@ -36,7 +36,7 @@
       <a href="skills.html">Skills</a>
       <a href="education.html">Ed &amp; Courses</a>
       <a href="experience.html">Experience</a>
-      <a href="certifications.html">Certifications</a>
+      <a href="certifications.html">Certificates</a>
       <a href="resume.html">Resume</a>
       <div class="navsocial">
         <a href="https://www.linkedin.com/in/moosa-ahmed-/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -50,8 +50,8 @@
 
 <header class="page-head wrap reveal">
   <div class="eyebrow">Projects</div>
-  <h1>Everything I've built</h1>
-  <p class="sec-sub">Course projects, a UX case study, and an active personal build. Click any project to see why it was made, what was used to build it, and the link.</p>
+  <h1>Selected work</h1>
+  <p class="sec-sub">A few projects that show how I work across software, AI, databases, digital logic, and UX. Open any project for the details and repository.</p>
 </header>
 
 <section>
@@ -69,10 +69,10 @@
         </div>
         <div class="acc-body">
           <div class="acc-body-inner">
-            <h4>Description</h4>
-            <p>The urban parking assignment problem, matching drivers to open spots efficiently, modeled as two different problems at once: a graph search task and a Markov Decision Process, to see how deterministic optimization stacks up against adaptive reinforcement learning on the exact same scenarios. I built two solvers from scratch to compare directly: Dijkstra's algorithm combined with hill climbing for the deterministic side, and a Q-learning agent for the adaptive side, run head-to-head across 3 constraint scenarios (limited availability, walking-distance limits) and evaluated on total cost, adaptability, and convergence speed.</p>
-            <h4>Why</h4>
-            <p>Course project for CP468 Artificial Intelligence, built with a 4-person team as a way to explore two different AI paradigms, search-based optimization and reinforcement learning, on the same real-world problem rather than in isolation.</p>
+            <h4>What I built</h4>
+            <p>Built a Python parking simulation that compares a Dijkstra + hill-climbing approach with a from-scratch Q-learning agent. I tested both approaches across three parking constraints and compared cost, adaptability, and convergence.</p>
+            <h4>My contribution</h4>
+            <p>Worked with a 4-person team on the AI implementation, testing, analysis, and the final research presentation.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>Python</li>
@@ -99,7 +99,7 @@
         <div class="acc-body">
           <div class="acc-body-inner">
             <h4>Description</h4>
-            <p>A WPF desktop application for browsing and managing a vehicle rental fleet, built by a 7-person Agile team across a full software engineering lifecycle: requirements gathering, sprint planning, and delivery over 3 sprints and 2 milestones. I worked as Scrum Master and developer, and focused heavily on the data layer - a 4-entity PostgreSQL database integrated through Entity Framework Core with version-controlled migrations. The implemented scope covers account registration, login, profile setup, and vehicle browsing by year, make, model, location, and price; the booking data model is in place, but the front-end booking flow itself wasn't fully wired up by the end of the term.</p>
+            <p>A WPF desktop application for browsing and managing a vehicle rental fleet, built by a 7-person Agile team across a full software engineering lifecycle: requirements gathering, sprint planning, and delivery over 3 sprints and 2 milestones. I worked as Scrum Master and developer, and focused heavily on the data layer — a 4-entity PostgreSQL database integrated through Entity Framework Core with version-controlled migrations. The implemented scope covers account registration, login, profile setup, and vehicle browsing by year, make, model, location, and price; the booking data model is in place, but the front-end booking flow itself wasn't fully wired up by the end of the term.</p>
             <h4>Why</h4>
             <p>Course project for CP317 Software Engineering, run as a 7-person team specifically to practice a full Agile lifecycle end to end rather than just writing code from a finished spec.</p>
             <h4>Tools &amp; concepts used</h4>
@@ -126,10 +126,10 @@
         </div>
         <div class="acc-body">
           <div class="acc-body-inner">
-            <h4>Description</h4>
-            <p>Built to go through the complete database lifecycle for an equipment testing center rather than just writing isolated queries: ER/EER modeling of the real-world entities and relationships, translating that into an 11-table relational schema with enforced primary/foreign key and CHECK constraints, then formally proving it through 3NF and BCNF normalization. On top of that I wrote reporting-style SQL, including subqueries, correlated subqueries, window functions, and views built on nested subqueries, then built a working Python CLI menu and a Tkinter GUI so the database was actually usable, not just theoretically sound.</p>
-            <h4>Why</h4>
-            <p>Course project for CP363 Database Systems, built with a partner specifically to practice full database design, from modeling and normalization proofs through to a real interface, rather than working with a schema that was already handed to us.</p>
+            <h4>What I built</h4>
+            <p>Designed an 11-table equipment-testing database from the ER/EER model through 3NF and BCNF normalization. I also wrote advanced SQL queries and built both a Python CLI and Tkinter interface so the database could be used as an application.</p>
+            <h4>My contribution</h4>
+            <p>Worked with a partner on the schema, normalization, SQL, and application integration.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>MySQL, Python, Tkinter</li>
@@ -155,10 +155,10 @@
         </div>
         <div class="acc-body">
           <div class="acc-body-inner">
-            <h4>Description</h4>
-            <p>A 4-bit combinational logic circuit that takes a binary input representing a decimal place (0 through 10) and outputs the corresponding digit of the mathematical constant e, with invalid inputs (11 through 15) correctly forced to output 0000. I derived the logic the proper hardware-design way: built a truth table for all 16 possible 4-bit inputs against the 4 output bits (O0-O3), simplified each output using Karnaugh maps into a minimized Boolean SOP expression, then implemented those as AND/OR/NOT gate networks. I simulated the full gate-level circuit and tested it against all 16 input combinations to confirm it matched the truth table exactly.</p>
-            <h4>Why</h4>
-            <p>Individual project for CP 220 Digital Electronics, a hands-on exercise in carrying a problem all the way from a truth table to minimized, working hardware logic rather than stopping at the equations on paper.</p>
+            <h4>What I built</h4>
+            <p>Designed a 4-bit combinational circuit that maps inputs 0–10 to digits of <em>e</em>, with invalid inputs 11–15 forced to 0000. I derived the Boolean logic from a full truth table, simplified it with Karnaugh maps, and built the final gate-level circuit.</p>
+            <h4>My contribution</h4>
+            <p>Completed the project individually, including simulation and testing of all 16 input combinations.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>Truth tables</li>
@@ -183,10 +183,10 @@
         </div>
         <div class="acc-body">
           <div class="acc-body-inner">
-            <h4>Description</h4>
-            <p>A UX strategy for an all-in-one travel platform concept combining ride-hailing, car rentals, public transit, and food/courier delivery into a single product. The work was structural rather than visual: defining the target audience, mapping the information architecture, and producing a full 12-page site map before any screens were designed, backed by competitor research on Uber and Lyft across pricing, UX, and market positioning. I carried that research and site map through into wireframes, mockups, and a clickable interactive prototype covering the platform's key flows.</p>
-            <h4>Why</h4>
-            <p>Course project for UX103 UX Strategy, built to practice translating a broad, multi-service product idea into a structured, defensible UX plan before jumping into visual design.</p>
+            <h4>What I built</h4>
+            <p>Created a UX strategy for an all-in-one travel platform covering ride-hailing, car rentals, public transit, and delivery. I defined the target audience and information architecture, built a 12-page site map, researched competitors, and carried the work into wireframes, mockups, and a clickable Figma prototype.</p>
+            <h4>My contribution</h4>
+            <p>Completed the project individually, from research and structure through the final prototype.</p>
             <h4>Tools &amp; concepts used</h4>
             <ul>
               <li>Figma, used for wireframes, mockups, and the interactive prototype</li>
@@ -208,7 +208,7 @@
 <footer id="contact">
   <div class="wrap">
     <div class="eyebrow reveal">Contact</div>
-    <h2 class="reveal">Looking for entry-level software and AI roles.</h2>
+    <h2 class="reveal">Looking for software development and AI/ML opportunities.</h2>
     <div class="contact-rail reveal">
       <span class="contact-rail-item"><i class="fa-solid fa-phone"></i> (437) 663-0242</span>
       <span class="contact-rail-item"><i class="fa-solid fa-envelope"></i> moosa1ahmed@gmail.com</span>
