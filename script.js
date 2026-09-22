@@ -6,10 +6,6 @@ if (menuToggle && navlinks) {
     const isOpen = navlinks.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
-  navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    navlinks.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-  }));
 }
 
 /* ---------- Active nav link ---------- */
@@ -31,41 +27,18 @@ if (revealEls.length) {
 }
 
 /* ---------- Accordion (Projects page + doc accordions) ---------- */
-document.querySelectorAll('.acc-head').forEach((head, index) => {
-  const item = head.closest('.acc-item');
-  const body = item.querySelector('.acc-body');
-  const setState = (open) => {
-    item.classList.toggle('open', open);
-    head.setAttribute('aria-expanded', open ? 'true' : 'false');
-    body.style.maxHeight = open ? body.scrollHeight + 'px' : null;
-  };
-  head.setAttribute('role', 'button');
-  head.setAttribute('tabindex', '0');
-  head.setAttribute('aria-controls', body.id || ('project-panel-' + (index + 1)));
-  if (!body.id) body.id = head.getAttribute('aria-controls');
-  head.setAttribute('aria-expanded', 'false');
-  const toggle = () => {
+document.querySelectorAll('.acc-head').forEach(head => {
+  head.addEventListener('click', () => {
+    const item = head.closest('.acc-item');
+    const body = item.querySelector('.acc-body');
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.acc-item').forEach(other => {
-      if (other !== item) {
-        other.classList.remove('open');
-        const otherHead = other.querySelector('.acc-head');
-        const otherBody = other.querySelector('.acc-body');
-        if (otherHead) otherHead.setAttribute('aria-expanded', 'false');
-        if (otherBody) otherBody.style.maxHeight = null;
-      }
+      other.classList.remove('open');
+      other.querySelector('.acc-body').style.maxHeight = null;
     });
-    setState(!isOpen);
-  };
-  head.addEventListener('click', (event) => {
-    if (event.target.closest('a')) return;
-    toggle();
-  });
-  head.addEventListener('keydown', (event) => {
-    if (event.target.closest('a')) return;
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      toggle();
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
     }
   });
 });

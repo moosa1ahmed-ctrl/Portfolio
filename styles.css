@@ -585,22 +585,3 @@ g.start-sel .node-label, g.end-sel .node-label { fill: #FFFFFF; }
     .rc-toggle i { transition: transform .2s ease; }
     .rc-toggle.expanded i { transform: rotate(180deg); }
   }
-
-/* Recruiter-focused education summary */
-.education-lead { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 24px; padding: 24px; border-bottom: 1px solid var(--border); }
-.education-kicker { font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
-.education-lead h3 { margin: 6px 0 8px; }
-.education-note { padding: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); }
-.education-note strong { display: block; margin-bottom: 6px; }
-.education-note p { margin: 0; font-size: .9rem; }
-.relevant-courses-page { padding: 24px; }
-.course-chip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.course-card2.compact { min-height: 118px; }
-.acc-head:focus-visible, .doc-acc-head:focus-visible, .menu-toggle:focus-visible, .btn:focus-visible, .crsl-arrow:focus-visible, .crsl-dot:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-@media (max-width: 760px) {
-  .education-lead { grid-template-columns: 1fr; }
-  .course-chip-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 520px) {
-  .course-chip-grid { grid-template-columns: 1fr; }
-}
