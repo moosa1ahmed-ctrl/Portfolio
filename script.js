@@ -288,7 +288,7 @@ if (svg) {
       maxIndex = Math.max(0, cards.length - perView);
       if (index > maxIndex) index = maxIndex;
       // clientWidth includes the viewport's own left/right padding, but cards
-      // only have the *content* box to lay out in — subtract that padding first,
+      // only have the *content* box to lay out in - subtract that padding first,
       // or the last card overflows past the visible area and gets clipped.
       const vpStyles = getComputedStyle(viewport);
       const padLeft = parseFloat(vpStyles.paddingLeft) || 0;
